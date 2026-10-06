@@ -1,3 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Imène Ait Abderrahim
+    </title>
+
+    <meta name="description"
+          content="Imène Ait Abderrahim — Researcher in Operations Research, Combinatorial Optimization, Metaheuristics, Automatic Algorithm Configuration and Machine Learning.">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           BASIC
+        ===================================================== */
+
+        :root {
+
+            --text: #252525;
+
+            --muted: #666666;
+
+            --light: #f7f8f6;
+
+            --border: #e5e5e5;
+
+            --accent: #168c8c;
+
+            --accent-dark: #096b6b;
+
+            --highlight: #f5c542;
+
+            --link: #147d9a;
+
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            background: white;
+
+            color: var(--text);
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+        }
+
+
+        a {
+
+            color: var(--link);
+
+            text-decoration: none;
+
+        }
+
+
+        a:hover {
+
+            color: var(--accent-dark);
+
+            text-decoration: underline;
+
+        }
+
+
+        .page {
+
+            max-width: 930px;
+
+            margin: 0 auto;
+
+            padding: 0 30px;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+
+            padding: 38px 0 22px;
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .header-inner {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
+
+        }
+
+
+        .name {
+
+            font-size: 1.25rem;
+
+            font-weight: 700;
+
+            color: var(--text);
+
+            letter-spacing: -0.3px;
+
+        }
+
+
+        .name span {
+
+            color: var(--accent);
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            gap: 22px;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        nav a {
+
+            color: #555;
+
+        }
+
+
+        nav a:hover {
+
+            color: var(--accent);
+
+            text-decoration: none;
+
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .intro {
+
+            padding: 65px 0 50px;
+
+        }
+
+
+        .intro-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 170px;
+
+            gap: 55px;
+
+            align-items: start;
+
+        }
+
+
+        .intro h1 {
+
+            margin: 0 0 20px;
+
+            font-size: 2.45rem;
+
+            line-height: 1.2;
+
+            letter-spacing: -1px;
+
+        }
+
+
+        .intro h1 .accent {
+
+            color: var(--accent);
+
+        }
+
+
+        .intro p {
+
+            margin: 0 0 18px;
+
+            color: #444;
+
+            max-width: 700px;
+
+        }
+
+
+        .profile {
+
+            width: 150px;
+
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            filter: grayscale(5%);
+
+            border: 1px solid #ddd;
+
+        }
+
+
+        .position {
+
+            font-size: 0.93rem;
+
+            color: var(--muted);
+
+            margin-top: 15px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =====================================================
+           BUTTON / LINKS
+        ===================================================== */
+
+        .quick-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .quick-link {
+
+            display: inline-block;
+
+            padding: 6px 13px;
+
+            border: 1px solid #d5dddd;
+
+            border-radius: 5px;
+
+            font-size: 0.85rem;
+
+            color: var(--accent-dark);
+
+            background: #fbfdfd;
+
+        }
+
+
+        .quick-link:hover {
+
+            background: #eef8f8;
+
+            text-decoration: none;
+
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+
+            padding: 48px 0;
+
+            border-top: 1px solid var(--border);
+
+        }
+
+
+        h2 {
+
+            font-size: 1.45rem;
+
+            margin: 0 0 25px;
+
+            color: #222;
+
+        }
+
+
+        h2::before {
+
+            content: "";
+
+            display: inline-block;
+
+            width: 18px;
+
+            height: 4px;
+
+            background: var(--highlight);
+
+            margin-right: 9px;
+
+            vertical-align: middle;
+
+            border-radius: 3px;
+
+        }
+
+
+        h3 {
+
+            font-size: 1.05rem;
+
+            margin: 0 0 5px;
+
+        }
+
+
+        p {
+
+            color: #4c4c4c;
+
+        }
+
+
+        /* =====================================================
+           RESEARCH HIGHLIGHT
+        ===================================================== */
+
+        .research-highlight {
+
+            background: var(--light);
+
+            border-left: 4px solid var(--accent);
+
+            padding: 23px 27px;
+
+            margin: 25px 0 30px;
+
+        }
+
+
+        .research-highlight p {
+
+            margin: 0;
+
+            font-size: 1.02rem;
+
+        }
+
+
+        .highlight-word {
+
+            color: var(--accent-dark);
+
+            font-weight: 600;
+
+        }
+
+
+        /* =====================================================
+           RESEARCH LIST
+        ===================================================== */
+
+        .research-list {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px 45px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .research-item {
+
+            padding: 10px 0;
+
+            border-bottom: 1px solid #eeeeee;
+
+        }
+
+
+        .research-item strong {
+
+            color: #333;
+
+        }
+
+
+        .research-item span {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* =====================================================
+           NEWS
+        ===================================================== */
+
+        .news-item {
+
+            display: grid;
+
+            grid-template-columns: 105px 1fr;
+
+            gap: 20px;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .news-date {
+
+            color: var(--accent);
+
+            font-size: 0.86rem;
+
+            font-weight: 600;
+
+        }
+
+
+        .news-text {
+
+            color: #444;
+
+        }
+
+
+        .news-text strong {
+
+            color: #222;
+
+        }
+
+
+        /* =====================================================
+           PUBLICATIONS
+        ===================================================== */
+
+        .publication {
+
+            margin-bottom: 27px;
+
+        }
+
+
+        .publication-title {
+
+            font-weight: 600;
+
+            color: #222;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .publication-authors {
+
+            color: #666;
+
+            font-size: 0.92rem;
+
+        }
+
+
+        .publication-venue {
+
+            color: var(--accent-dark);
+
+            font-size: 0.88rem;
+
+            margin-top: 2px;
+
+        }
+
+
+        .publication-links {
+
+            font-size: 0.84rem;
+
+            margin-top: 4px;
+
+        }
+
+
+        .publication-links a {
+
+            margin-right: 12px;
+
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ===================================================== */
+
+        .experience-item {
+
+            display: grid;
+
+            grid-template-columns: 155px 1fr;
+
+            gap: 25px;
+
+            margin-bottom: 27px;
+
+        }
+
+
+        .experience-date {
+
+            color: var(--accent);
+
+            font-size: 0.87rem;
+
+            font-weight: 600;
+
+        }
+
+
+        .experience-content h3 {
+
+            font-size: 1rem;
+
+        }
+
+
+        .experience-content p {
+
+            margin: 3px 0;
+
+            font-size: 0.93rem;
+
+        }
+
+
+        /* =====================================================
+           TEACHING
+        ===================================================== */
+
+        .teaching-list {
+
+            margin: 0;
+
+            padding-left: 20px;
+
+        }
+
+
+        .teaching-list li {
+
+            margin-bottom: 7px;
+
+            color: #4c4c4c;
+
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-box {
+
+            background: #fafcfc;
+
+            border: 1px solid var(--border);
+
+            padding: 25px;
+
+            border-radius: 6px;
+
+        }
+
+
+        .social-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 18px;
+
+            margin-top: 18px;
+
+        }
+
+
+        .social-links a {
+
+            font-weight: 500;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            border-top: 1px solid var(--border);
+
+            padding: 25px 0 40px;
+
+            color: #888;
+
+            font-size: 0.8rem;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+
+            .page {
+
+                padding: 0 20px;
+
+            }
+
+
+            .header-inner {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 12px;
+
+            }
+
+
+            nav {
+
+                flex-wrap: wrap;
+
+                gap: 13px;
+
+            }
+
+
+            .intro {
+
+                padding-top: 45px;
+
+            }
+
+
+            .intro-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .profile {
+
+                width: 125px;
+
+                height: 125px;
+
+                order: -1;
+
+            }
+
+
+            .intro h1 {
+
+                font-size: 2rem;
+
+            }
+
+
+            .research-list {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .news-item,
+
+            .experience-item {
+
+                grid-template-columns: 1fr;
+
+                gap: 2px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="name">
+
+            Imène <span>Ait Abderrahim</span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#about">About</a>
+
+            <a href="#research">Research</a>
+
+            <a href="#publications">Publications</a>
+
+            <a href="#experience">Experience</a>
+
+            <a href="#teaching">Teaching</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<div class="intro">
+
+    <div class="intro-grid">
+
+
+        <div>
+
+            <h1>
+
+                Imène Ait Abderrahim
+
+                <span class="accent">.</span>
+
+            </h1>
+
+
+            <p>
+
+                Hello! I am a researcher in
+                <strong>Computer Science and Operations Research</strong>.
+                My research focuses on combinatorial optimization,
+                metaheuristics, automatic algorithm configuration,
+                and machine learning.
+
+            </p>
+
+
+            <p>
+
+                I am particularly interested in developing
+                <span class="highlight-word">
+                    adaptive and data-driven optimization algorithms
+                </span>
+                that can adjust their behaviour according to problem
+                characteristics and the state of the search process.
+
+            </p>
+
+
+            <p class="position">
+
+                Postdoctoral Researcher · Sorbonne University, France
+
+            </p>
+
+
+            <div class="quick-links">
+
+                <a class="quick-link"
+                   href="cv.pdf">
+
+                    CV
+
+                </a>
+
+
+                <a class="quick-link"
+                   href="https://github.com/iaitabderrahim"
+                   target="_blank">
+
+                    GitHub
+
+                </a>
+
+
+                <a class="quick-link"
+                   href="#">
+
+                    Google Scholar
+
+                </a>
+
+
+                <a class="quick-link"
+                   href="#">
+
+                    ORCID
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <!-- Replace profile.jpg with your photograph -->
+
+            <img src="profile.jpg"
+                 alt="Imène Ait Abderrahim"
+                 class="profile">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <h2>About</h2>
+
+
+    <p>
+
+        My research lies at the intersection of
+        <strong>Operations Research</strong>,
+        <strong>Combinatorial Optimization</strong>,
+        <strong>Metaheuristics</strong> and
+        <strong>Artificial Intelligence</strong>.
+
+    </p>
+
+
+    <p>
+
+        A central theme of my work is the transition from
+        optimization algorithms using fixed parameter settings
+        toward algorithms that can <strong>adapt dynamically
+        during the optimization process</strong>.
+
+    </p>
+
+
+    <div class="research-highlight">
+
+        <p>
+
+            <strong>Research question:</strong>
+
+            How can an optimization algorithm use
+            <span class="highlight-word">
+                problem characteristics, algorithm features
+                and search-state information
+            </span>
+            to decide how it should behave next?
+
+        </p>
+
+    </div>
+
+
+    <p>
+
+        This perspective motivates my work on feature-driven
+        adaptive algorithm configuration, hyper-configuration,
+        dynamic parameter control and the analysis of algorithm
+        behaviour.
+
+    </p>
+
+
+</section>
+
+
+<!-- =====================================================
+     NEWS
+===================================================== -->
+
+<section>
+
+    <h2>News</h2>
+
+
+    <div class="news-item">
+
+        <div class="news-date">
+            2026
+        </div>
+
+        <div class="news-text">
+
+            Continuing research on
+            <strong>adaptive algorithm configuration</strong>
+            and data-driven optimization.
+
+        </div>
+
+    </div>
+
+
+    <div class="news-item">
+
+        <div class="news-date">
+            2025
+        </div>
+
+        <div class="news-text">
+
+            Postdoctoral research at
+            <strong>Sorbonne University</strong>,
+            focusing on optimization and intelligent
+            algorithm design.
+
+        </div>
+
+    </div>
+
+
+    <div class="news-item">
+
+        <div class="news-date">
+            2024–25
+        </div>
+
+        <div class="news-text">
+
+            Research activities involving automatic algorithm
+            configuration, feature-based optimization and
+            international collaborations.
+
+        </div>
+
+    </div>
+
+
+    <div class="news-item">
+
+        <div class="news-date">
+            2023–27
+        </div>
+
+        <div class="news-text">
+
+            Member of the
+            <strong>COST Action CA22137 ROAR</strong>
+            — Randomised Optimisation Algorithms Research Network.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESEARCH
+===================================================== -->
+
+<section id="research">
+
+    <h2>Research</h2>
+
+
+    <p>
+
+        My research interests include the following topics:
+
+    </p>
+
+
+    <div class="research-list">
+
+
+        <div class="research-item">
+
+            <strong>
+                Automatic Algorithm Configuration
+            </strong>
+
+            <span>
+                Automated tuning and configuration of optimization algorithms.
+            </span>
+
+        </div>
+
+
+        <div class="research-item">
+
+            <strong>
+                Dynamic Algorithm Adaptation
+            </strong>
+
+            <span>
+                Online adjustment of algorithm parameters during a run.
+            </span>
+
+        </div>
+
+
+        <div class="research-item">
+
+            <strong>
+                Combinatorial Optimization
+            </strong>
+
+            <span>
+                Computational methods for difficult discrete optimization problems.
+            </span>
+
+        </div>
+
+
+        <div class="research-item">
+
+            <strong>
+                Metaheuristics
+            </strong>
+
+            <span>
+                ILS, Tabu Search, PSO, ALNS, GA and hybrid methods.
+            </span>
+
+        </div>
+
+
+        <div class="research-item">
+
+            <strong>
+                Machine Learning for Optimization
+            </strong>
+
+            <span>
+                Learning relationships between problem features,
+                search behaviour and algorithm decisions.
+            </span>
+
+        </div>
+
+
+        <div class="research-item">
+
+            <strong>
+                Algorithm Behaviour & Explainability
+            </strong>
+
+            <span>
+                Search trajectories, landscape features,
+                exploration and exploitation.
+            </span>
+
+        </div>
+
+
+        <div class="research-item">
+
+            <strong>
+                Maritime Optimization
+            </strong>
+
+            <span>
+                Multi-port berth allocation and maritime logistics.
+            </span>
+
+        </div>
+
+
+        <div class="research-item">
+
+            <strong>
+                Scheduling & Allocation
+            </strong>
+
+            <span>
+                Real-world resource allocation and scheduling problems.
+            </span>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     RESEARCH PROJECTS
+===================================================== -->
+
+<section>
+
+    <h2>Selected research projects</h2>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+
+            Feature-Driven Adaptive Algorithm Configuration
+
+        </div>
+
+        <div class="publication-authors">
+
+            Combining offline algorithm configuration with
+            online learning and dynamic parameter adjustment
+            for combinatorial optimization.
+
+        </div>
+
+        <div class="publication-venue">
+
+            ADAC · Machine Learning · Metaheuristics
+
+        </div>
+
+    </div>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+
+            Hyper-Configurable ALNS for Multi-Port Berth Allocation
+
+        </div>
+
+        <div class="publication-authors">
+
+            Dynamic control of ALNS parameters using problem
+            and search-state features for continuous berth
+            allocation.
+
+        </div>
+
+        <div class="publication-venue">
+
+            ALNS · Hyper-Configuration · Maritime Logistics
+
+        </div>
+
+    </div>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+
+            Algorithm Behaviour and Landscape Analysis
+
+        </div>
+
+        <div class="publication-authors">
+
+            Analysis of algorithm trajectories, time-series
+            features and search dynamics to understand the
+            relationship between algorithm behaviour and
+            problem characteristics.
+
+        </div>
+
+        <div class="publication-venue">
+
+            Algorithm Features · Time Series · Explainability
+
+        </div>
+
+    </div>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+
+            Quadratic 3-Dimensional Assignment Problem
+
+        </div>
+
+        <div class="publication-authors">
+
+            Hybrid ILS, Tabu Search and PSO approaches together
+            with automatic configuration for the Q3AP.
+
+        </div>
+
+        <div class="publication-venue">
+
+            Q3AP · Metaheuristics · Automatic Configuration
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PUBLICATIONS
+===================================================== -->
+
+<section id="publications">
+
+    <h2>Selected publications</h2>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+
+            Hyper-configurable reactive adaptive large
+            neighborhood search for multi-port berth allocation
+
+        </div>
+
+        <div class="publication-authors">
+
+            I. Ait Abderrahim et al.
+
+        </div>
+
+        <div class="publication-venue">
+
+            Publication details to be added
+
+        </div>
+
+        <div class="publication-links">
+
+            <a href="#">
+                [Paper]
+            </a>
+
+            <a href="#">
+                [DOI]
+            </a>
+
+            <a href="#">
+                [Code]
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="publication">
+
+        <div class="publication-title">
+
+            Hybrid metaheuristic approaches for the
+            Quadratic 3-Dimensional Assignment Problem
+
+        </div>
+
+        <div class="publication-authors">
+
+            I. Ait Abderrahim et al.
+
+        </div>
+
+        <div class="publication-venue">
+
+            Publication details to be added
+
+        </div>
+
+        <div class="publication-links">
+
+            <a href="#">
+                [Paper]
+            </a>
+
+            <a href="#">
+                [DOI]
+            </a>
+
+            <a href="#">
+                [Code]
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <p>
+
+        <a href="#">
+
+            → Complete publication list
+
+        </a>
+
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+
+    <h2>Academic experience</h2>
+
+
+    <div class="experience-item">
+
+        <div class="experience-date">
+            2025 – present
+        </div>
+
+        <div class="experience-content">
+
+            <h3>
+                Postdoctoral Researcher
+            </h3>
+
+            <p>
+                Sorbonne University, France
+            </p>
+
+            <p>
+                Research in optimization, automatic algorithm
+                configuration, adaptive metaheuristics and
+                machine learning.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="experience-item">
+
+        <div class="experience-date">
+            Research visits
+        </div>
+
+        <div class="experience-content">
+
+            <h3>
+                International research collaborations
+            </h3>
+
+            <p>
+
+                Research activities involving algorithm
+                configuration, combinatorial optimization,
+                machine learning and algorithm features.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="experience-item">
+
+        <div class="experience-date">
+            PhD
+        </div>
+
+        <div class="experience-content">
+
+            <h3>
+                PhD in Computer Science
+            </h3>
+
+            <p>
+                University of Oran 1 Ahmed Ben Bella, Algeria
+            </p>
+
+            <p>
+
+                Research on metaheuristic optimization for the
+                Quadratic 3-Dimensional Assignment Problem.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     TEACHING
+===================================================== -->
+
+<section id="teaching">
+
+    <h2>Teaching & supervision</h2>
+
+
+    <p>
+
+        I have taught and supervised students in computer science,
+        operations research and data-driven methods.
+
+    </p>
+
+
+    <ul class="teaching-list">
+
+        <li>
+            Operations Research and Optimization
+        </li>
+
+        <li>
+            Linear and Integer Programming
+        </li>
+
+        <li>
+            Metaheuristics and Combinatorial Optimization
+        </li>
+
+        <li>
+            Data Science
+        </li>
+
+        <li>
+            Human-Machine Interaction
+        </li>
+
+        <li>
+            Artificial Intelligence
+        </li>
+
+        <li>
+            Master's and Bachelor's research projects
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     COLLABORATIONS
+===================================================== -->
+
+<section>
+
+    <h2>Research network</h2>
+
+
+    <p>
+
+        I participate in international research activities in
+        optimization and algorithm configuration, including the
+        <strong>COST Action CA22137 — Randomised Optimisation
+        Algorithms Research Network (ROAR)</strong>.
+
+    </p>
+
+
+    <p>
+
+        My research collaborations have involved researchers and
+        groups working on automatic algorithm configuration,
+        machine learning, optimization and algorithm analysis.
+
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <h2>Contact</h2>
+
+
+    <div class="contact-box">
+
+        <p>
+
+            I am interested in research collaborations,
+            scientific exchanges and academic opportunities in
+            optimization, algorithm configuration and
+            AI for combinatorial optimization.
+
+        </p>
+
+
+        <div class="social-links">
+
+
+            <a href="mailto:YOUR_EMAIL@example.com">
+
+                Email
+
+            </a>
+
+
+            <a href="https://github.com/iaitabderrahim"
+               target="_blank">
+
+                GitHub
+
+            </a>
+
+
+            <a href="#"
+               target="_blank">
+
+                Google Scholar
+
+            </a>
+
+
+            <a href="#"
+               target="_blank">
+
+                ORCID
+
+            </a>
+
+
+            <a href="#"
+               target="_blank">
+
+                LinkedIn
+
+            </a>
+
+
+            <a href="cv.pdf">
+
+                CV
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 Imène Ait Abderrahim ·
+    Operations Research · Optimization · AI
+
+</footer>
+
+
+</div>
+
+
+</body>
+
+</html>
+```
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -1804,4 +3474,3 @@
 </body>
 
 </html>
-```
