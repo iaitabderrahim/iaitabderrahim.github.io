@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IEEE CEC 2027 Special Session on Dynamic Algorithm Configuration and Selection">
+  <title>DAC-CEC2027 | Dynamic Algorithm Configuration and Selection</title>
+
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --blue: #173b73;
+      --green: #72c84a;
+      --green-dark: #4f9d31;
+      --light: #f5f7fa;
+      --text: #263238;
+      --muted: #667085;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(11, 31, 58, .09);
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--green-dark); }
+
+    .topbar {
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 6%;
+      font-size: .88rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 22px;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 750;
+      color: var(--navy);
+    }
+
+    .brand img { width: 105px; height: auto; }
+
+    .links {
+      display: flex;
+      gap: 22px;
+      font-size: .92rem;
+      font-weight: 600;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .links a { color: #344054; }
+    .links a:hover { color: var(--green-dark); }
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(11,31,58,.97), rgba(23,59,115,.93));
+      color: #fff;
+      padding: 76px 22px 82px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      background: rgba(114,200,74,.13);
+      right: -120px;
+      top: -170px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo {
+      width: min(430px, 90%);
+      background: rgba(255,255,255,.97);
+      border-radius: 12px;
+      padding: 13px 18px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: #a7e982;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .82rem;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 1.08;
+      max-width: 900px;
+      margin: 13px 0 18px;
+      letter-spacing: -.035em;
+    }
+
+    .hero p {
+      max-width: 850px;
+      font-size: 1.16rem;
+      color: #dbe5f2;
+      margin: 0 0 26px;
+    }
+
+    .event-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.09);
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-size: .92rem;
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--green);
+      color: #102b1b;
+      font-weight: 800;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    .cta:hover { color: #102b1b; background: #8add61; }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 60px 22px;
+    }
+
+    section { margin-bottom: 70px; }
+
+    h2 {
+      color: var(--navy);
+      font-size: 2rem;
+      margin: 0 0 18px;
+      letter-spacing: -.02em;
+    }
+
+    h3 {
+      color: var(--blue);
+      margin-top: 28px;
+    }
+
+    .intro {
+      font-size: 1.08rem;
+      color: #475467;
+      max-width: 920px;
+    }
+
+    .keywords {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: #edf7e8;
+      color: #326b22;
+      border: 1px solid #d6edcb;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: .86rem;
+      font-weight: 650;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 13px 35px;
+      margin-top: 20px;
+    }
+
+    .topic-grid div {
+      padding: 11px 0 11px 20px;
+      border-left: 3px solid var(--green);
+    }
+
+    .dates {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .date-card {
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--green);
+      border-radius: 9px;
+      padding: 19px 16px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .date-card .date {
+      color: var(--green-dark);
+      font-weight: 850;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .date-card .label {
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 14px 17px;
+      border-left: 4px solid var(--blue);
+      background: #f2f6fb;
+      color: #475467;
+      border-radius: 5px;
+    }
+
+    .submission {
+      background: var(--light);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .submission ul { padding-left: 22px; }
+
+    .organizers {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .person {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 6px 22px rgba(11,31,58,.05);
+      background: #fff;
+    }
+
+    .person h3 { margin: 0 0 5px; color: var(--navy); }
+    .person .affiliation { color: var(--green-dark); font-weight: 700; font-size: .92rem; }
+    .person .email { font-size: .9rem; margin: 8px 0 13px; word-break: break-word; }
+    .person p { color: #667085; font-size: .92rem; }
+
+    .cec-card {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 30px;
+      align-items: center;
+      background: linear-gradient(135deg, #f3f8ef, #f4f7fb);
+      border-radius: 14px;
+      padding: 30px;
+      border: 1px solid var(--border);
+    }
+
+    .cec-card img {
+      width: 100%;
+      max-width: 310px;
+      border-radius: 12px;
+      display: block;
+      margin: auto;
+    }
+
+    footer {
+      background: var(--navy);
+      color: #cdd8e6;
+      padding: 35px 22px;
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    footer a { color: #a7e982; }
+
+    @media (max-width: 850px) {
+      .dates { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .organizers { grid-template-columns: 1fr; }
+      .cec-card { grid-template-columns: 1fr; }
+      .topic-grid { grid-template-columns: 1fr; }
+      .links { display: none; }
+    }
+
+    @media (max-width: 520px) {
+      .dates { grid-template-columns: 1fr; }
+      .hero { padding-top: 50px; }
+      .submission { padding: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <span>IEEE CEC 2027 · Edinburgh, Scotland, UK</span>
+    <span>July 25–28, 2027</span>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#home">
+        <img src="https://confcats-siteplex.s3.amazonaws.com/ieeecec/glide-cache/containers/logos/cec27-logo-hr_color-updated.png/f8daa10ee7cf641369c1e380031c2af6/cec27-logo-hr_color-updated.webp"
+             alt="IEEE CEC 2027 logo">
+      </a>
+      <div class="links">
+        <a href="#scope">Aim & Scope</a>
+        <a href="#topics">Topics</a>
+        <a href="#dates">Important Dates</a>
+        <a href="#submission">Submission</a>
+        <a href="#organizers">Organizers</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-inner">
+      <img class="hero-logo"
+           src="https://confcats-siteplex.s3.amazonaws.com/ieeecec/glide-cache/containers/logos/cec27-logo-hr_color-updated.png/f8daa10ee7cf641369c1e380031c2af6/cec27-logo-hr_color-updated.webp"
+           alt="IEEE CEC 2027">
+
+      <div class="eyebrow">Special Session · IEEE CEC 2027</div>
+      <h1>Dynamic Algorithm Configuration and Selection</h1>
+      <p>
+        A special session dedicated to dynamic, adaptive, and data-driven
+        approaches for configuring and selecting optimization algorithms
+        during their execution.
+      </p>
+
+      <div class="event-meta">
+        <span class="pill">📍 Edinburgh, Scotland, UK</span>
+        <span class="pill">📅 July 25–28, 2027</span>
+        <span class="pill">IEEE Congress on Evolutionary Computation</span>
+      </div>
+
+      <a class="cta" href="https://ieeecec.org/2027/" target="_blank" rel="noopener">
+        IEEE CEC 2027 Website →
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="scope">
+      <h2>Aim and Scope</h2>
+      <p class="intro">
+        Algorithm configuration and selection have become important components
+        in improving the performance and robustness of optimization, machine
+        learning, and artificial intelligence systems. Traditional approaches
+        often rely on static configurations, which may not adequately adapt to
+        heterogeneous problem instances, changing search conditions, or the
+        evolving state of an algorithm during execution.
+      </p>
+
+      <p class="intro">
+        This special session focuses on <strong>dynamic algorithm configuration
+        (DAC)</strong> and <strong>dynamic algorithm selection</strong>, where
+        algorithmic decisions, parameters, heuristics, or search strategies
+        can be adapted over time. The session aims to bring together
+        researchers working on automated configuration, parameter control,
+        adaptive heuristics, machine learning, metaheuristics, evolutionary
+        computation, and related areas.
+      </p>
+
+      <p class="intro">
+        We particularly welcome contributions that investigate how information
+        collected from the problem instance, search process, fitness landscape,
+        or algorithm state can be used to make effective decisions during
+        optimization. Both methodological and application-oriented work is
+        encouraged.
+      </p>
+
+      <div class="keywords">
+        <span class="tag">Dynamic algorithm configuration</span>
+        <span class="tag">Dynamic algorithm selection</span>
+        <span class="tag">Parameter control</span>
+        <span class="tag">Self-adaptive algorithms</span>
+        <span class="tag">Reactive search</span>
+        <span class="tag">Automated algorithm design</span>
+        <span class="tag">Machine learning</span>
+      </div>
+    </section>
+
+    <section id="topics">
+      <h2>Topics of Interest</h2>
+      <p class="intro">
+        Contributions may address, but are not limited to, the following topics:
+      </p>
+
+      <div class="topic-grid">
+        <div>Dynamic algorithm configuration and parameter control</div>
+        <div>Online and dynamic algorithm selection</div>
+        <div>Self-adapting and reactive optimization methods</div>
+        <div>Data-driven algorithm configuration</div>
+        <div>Machine learning for adaptive optimization</div>
+        <div>Automated design of heuristics and metaheuristics</div>
+        <div>Hyper-heuristics and algorithm portfolios</div>
+        <div>Fitness-landscape and search-process analysis</div>
+        <div>Feature-based and instance-aware adaptation</div>
+        <div>Dynamic optimization and changing environments</div>
+        <div>Explainability of algorithm behaviour</div>
+        <div>Benchmarking and empirical evaluation of adaptive methods</div>
+        <div>Evolutionary computation and swarm intelligence</div>
+        <div>Applications in scheduling, logistics and transportation</div>
+        <div>Applications in AI, engineering and real-world optimization</div>
+        <div>Theoretical foundations of adaptive algorithms</div>
+      </div>
+    </section>
+
+    <section id="dates">
+      <h2>Important Dates</h2>
+      <p class="intro">
+        The dates below follow the official IEEE CEC 2027 schedule currently
+        published by the conference.
+      </p>
+
+      <div class="dates">
+        <div class="date-card">
+          <div class="date">Nov 15, 2026</div>
+          <div class="label">Special Session & Workshop Proposals Deadline</div>
+        </div>
+
+        <div class="date-card">
+          <div class="date">Dec 07, 2026</div>
+          <div class="label">Special Session Proposal Acceptance Notification</div>
+        </div>
+
+        <div class="date-card">
+          <div class="date">Feb 28, 2027</div>
+          <div class="label">Full Paper Submission Deadline</div>
+        </div>
+
+        <div class="date-card">
+          <div class="date">Apr 07, 2027</div>
+          <div class="label">Paper Acceptance Notification</div>
+        </div>
+
+        <div class="date-card">
+          <div class="date">May 01, 2027</div>
+          <div class="label">Final Paper Submission & Early Registration</div>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Conference:</strong> IEEE CEC 2027 will take place in
+        Edinburgh, Scotland, UK, from <strong>July 25–28, 2027</strong>.
+        The official CEC website states that no extension will be given for
+        the full-paper and short-paper submission deadlines.
+      </div>
+    </section>
+
+    <section id="submission">
+      <h2>Submission</h2>
+
+      <div class="submission">
+        <p>
+          Papers submitted to this Special Session will use the main IEEE CEC
+          2027 submission system and follow the same format, page limits, and
+          review standards as regular CEC papers.
+        </p>
+
+        <ul>
+          <li>Initial full papers may contain up to <strong>8 pages</strong>, including figures, tables and references.</li>
+          <li>Submissions must be original and not under review or submitted elsewhere.</li>
+          <li>IEEE CEC 2027 uses a <strong>double-anonymous review process</strong> for full-paper submissions.</li>
+          <li>Authors should select this Special Session in the CEC 2027 submission system when submitting their paper.</li>
+          <li>Accepted and presented full papers will be submitted for inclusion in the IEEE Xplore Digital Library, subject to IEEE requirements.</li>
+        </ul>
+
+        <a class="cta" href="https://ieeecec.org/2027/initial-paper-submission-instructions"
+           target="_blank" rel="noopener">
+          Submission Instructions →
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>IEEE CEC 2027</h2>
+
+      <div class="cec-card">
+        <div>
+          <p class="intro">
+            The 2027 IEEE Congress on Evolutionary Computation is one of the
+            flagship conferences of the IEEE Computational Intelligence Society.
+            The congress will bring together researchers and practitioners
+            working across evolutionary computation, optimization, machine
+            learning, artificial intelligence, and real-world applications.
+          </p>
+
+          <p>
+            <strong>Edinburgh · July 25–28, 2027</strong>
+          </p>
+
+          <a class="cta" href="https://ieeecec.org/2027/" target="_blank" rel="noopener">
+            Visit IEEE CEC 2027 →
+          </a>
+        </div>
+
+        <img src="https://confcats-siteplex.s3.amazonaws.com/ieeecec/glide-cache/containers/contacts/szathmary_photo_2023.jpeg/5c9c1e40129cfc7d4184f015bdfd6aff/szathmary_photo_2023.webp"
+             alt="IEEE CEC 2027 keynote speaker Eörs Szathmáry">
+      </div>
+    </section>
+
+    <section id="organizers">
+      <h2>Organizers</h2>
+
+      <div class="organizers">
+
+        <article class="person">
+          <h3>Imène Ait Abderrahim</h3>
+          <div class="affiliation">
+            LIP6, CNRS, Sorbonne Université · Khemis Miliana University
+          </div>
+          <div class="email">
+            <a href="mailto:imene.ait-abderrahim@lip6.fr">imene.ait-abderrahim@lip6.fr</a><br>
+            <a href="mailto:i.aitabderrahim@univ-dbkm.dz">i.aitabderrahim@univ-dbkm.dz</a>
+          </div>
+          <p>
+            Postdoctoral researcher at LIP6, Sorbonne University, France.
+            Her research interests include operations research, combinatorial
+            optimization, metaheuristics, and automatic algorithm configuration.
+          </p>
+          <a href="https://lip6.fr/Imene.Ait-Abderrahim" target="_blank" rel="noopener">
+            Personal webpage →
+          </a>
+        </article>
+
+        <article class="person">
+          <h3>Nguyen Dang</h3>
+          <div class="affiliation">University of St Andrews</div>
+          <div class="email">
+            <a href="mailto:nttd@st-andrews.ac.uk">nttd@st-andrews.ac.uk</a>
+          </div>
+          <p>
+            Lecturer (Assistant Professor) at the University of St Andrews.
+            Her research interests include automated algorithm configuration,
+            automated algorithm selection, black-box optimization, and
+            constraint programming.
+          </p>
+          <a href="https://ndangtt.github.io/" target="_blank" rel="noopener">
+            Personal webpage →
+          </a>
+        </article>
+
+        <article class="person">
+          <h3>Thomas Stützle</h3>
+          <div class="affiliation">Université Libre de Bruxelles (ULB)</div>
+          <div class="email">
+            <a href="mailto:stuetzle@ulb.ac.be">stuetzle@ulb.ac.be</a>
+          </div>
+          <p>
+            Research Director of the Belgian F.R.S.-FNRS at IRIDIA, ULB.
+            His research covers stochastic local search, large-scale
+            experimental studies, automated algorithm design, and
+            metaheuristics.
+          </p>
+          <a href="https://iridia.ulb.ac.be/~stuetzle/" target="_blank" rel="noopener">
+            Personal webpage →
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <strong>Dynamic Algorithm Configuration and Selection</strong><br>
+      Special Session at IEEE CEC 2027 · Edinburgh, Scotland, UK · July 25–28, 2027
+    </p>
+    <p>
+      Official conference website:
+      <a href="https://ieeecec.org/2027/" target="_blank" rel="noopener">ieeecec.org/2027</a>
+    </p>
+  </footer>
+
+</body>
+</html>
